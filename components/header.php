@@ -60,6 +60,7 @@ $currentPath = $seo['path'] ?? '';
   </div>
 
   <nav id="mobileNav" class="mobile-nav" aria-label="<?= htmlspecialchars(t($t, 'nav.aria_label')) ?>" hidden>
+    <button type="button" class="mobile-nav__close" data-nav-close aria-label="<?= htmlspecialchars(t($t, 'nav.close_menu')) ?>">&times;</button>
     <ul class="mobile-nav__list">
       <?php foreach ($navItems as $item): ?>
       <li>

@@ -10,7 +10,7 @@
   }
 
   items.forEach(function (el, i) {
-    el.style.setProperty('--reveal-delay', (Math.min(i % 6, 5) * 70) + 'ms');
+    el.style.setProperty('--reveal-delay', (Math.min(i % 6, 5) * 60) + 'ms');
   });
 
   var observer = new IntersectionObserver(function (entries, obs) {
@@ -20,7 +20,7 @@
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
 
   items.forEach(function (el) { observer.observe(el); });
 })();

@@ -1,36 +1,83 @@
 /* =====================================================================
    Pizzeria Roma — Animations
    Keyframes + clases usadas por js/scroll-reveal.js (IntersectionObserver).
-   Micro-interacciones discretas: sin rebote, 200-300ms, cubic-bezier.
+   Micro-interacciones discretas: sin rebote, curvas suaves tipo "ease-out".
    ===================================================================== */
 
 /* Estado inicial de los elementos observados por IntersectionObserver */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(28px) scale(0.975);
   transition:
-    opacity var(--duration-slow) var(--ease-out),
-    transform var(--duration-slow) var(--ease-out);
+    opacity var(--duration-slower) var(--ease-out),
+    transform var(--duration-slower) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
 }
 
 [data-reveal].is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 [data-reveal="fade"] {
   transform: none;
 }
 
-/* Retraso escalonado para grids de cards (aplicado vía JS con --reveal-delay) */
-[data-reveal] {
-  transition-delay: var(--reveal-delay, 0ms);
+[data-reveal="fade"].is-visible {
+  transform: none;
+}
+
+/* -----------------------------------------------------------------
+   Transición de página (navegación entre secciones/tabs del sitio)
+   ----------------------------------------------------------------- */
+
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Solo opacity: un transform en <body> (incluso translateY(0) en el estado
+   final por animation-fill-mode) crea un containing block nuevo para todos
+   los descendientes position:fixed (menú móvil, modal de pedido...), y ese
+   viewport falso rompe su posicionamiento. */
+body {
+  animation: page-fade-in var(--duration-slower) var(--ease-out) both;
+}
+
+/* Progressive enhancement: transición nativa entre documentos (cross-fade)
+   en navegadores compatibles. Si no hay soporte, no pasa nada — el fallback
+   de fade JS en main.js cubre esos casos. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--duration-slower);
+  animation-timing-function: var(--ease-out);
+}
+
+/* Fallback JS (navegadores sin View Transitions): fade-out antes de salir
+   de la página, aplicado por main.js sobre <body>. */
+body.is-leaving {
+  animation: none;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-standard);
 }
 
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     opacity: 1;
     transform: none;
+    transition: none;
+  }
+
+  body {
+    animation: none;
+  }
+
+  body.is-leaving {
     transition: none;
   }
 

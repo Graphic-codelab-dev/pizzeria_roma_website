@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="slice-clip">
+      <path d="M5 5 L28.5 15.5 A15 15 0 0 1 15.5 28.5 Z"/>
+    </clipPath>
+  </defs>
+  <path d="M5 5 L28.5 15.5 A15 15 0 0 1 15.5 28.5 Z"
+        fill="#F0CD5C" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round"/>
+  <g clip-path="url(#slice-clip)">
+    <path d="M28.5 15.5 A15 15 0 0 1 15.5 28.5" fill="none" stroke="#D4A937" stroke-width="5"/>
+  </g>
+  <path d="M5 5 L28.5 15.5 A15 15 0 0 1 15.5 28.5 Z"
+        fill="none" stroke="#1A1A1A" stroke-width="1.6" stroke-linejoin="round"/>
+  <circle cx="12.6" cy="12.2" r="2.1" fill="#C1272D" stroke="#8F1D22" stroke-width="0.6"/>
+  <circle cx="20.2" cy="14.6" r="1.85" fill="#C1272D" stroke="#8F1D22" stroke-width="0.6"/>
+  <circle cx="16.2" cy="19.4" r="1.6" fill="#C1272D" stroke="#8F1D22" stroke-width="0.6"/>
+</svg>

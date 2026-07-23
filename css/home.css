@@ -299,7 +299,7 @@
 }
 
 .home-faq__question {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   font-weight: var(--fw-semibold);
 }
 

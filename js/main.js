@@ -24,9 +24,15 @@
     toggle.setAttribute('aria-expanded', 'false');
     nav.classList.remove('is-open');
     document.body.classList.remove('nav-open');
+    document.removeEventListener('keydown', onKeydown);
     closeTimer = setTimeout(function () {
       nav.hidden = true;
     }, 260);
+    toggle.focus();
+  }
+
+  function onKeydown(e) {
+    if (e.key === 'Escape') closeNav();
   }
 
   toggle.addEventListener('click', function () {
@@ -35,11 +41,53 @@
       closeNav();
     } else {
       openNav();
+      document.addEventListener('keydown', onKeydown);
     }
+  });
+
+  nav.querySelectorAll('[data-nav-close]').forEach(function (el) {
+    el.addEventListener('click', closeNav);
   });
 
   nav.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', closeNav);
+  });
+})();
+
+(function initPageTransitions() {
+  // Navegadores con View Transitions nativas (cross-document) ya resuelven
+  // la transición entre páginas sin JS — ver @view-transition en animations.css.
+  if ('startViewTransition' in document) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var EXIT_DELAY = 260; // debe calzar con --duration-base
+
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+    var link = e.target.closest('a[href]');
+    if (!link || link.hasAttribute('download')) return;
+    if (link.target && link.target !== '_self') return;
+
+    var url;
+    try {
+      url = new URL(link.href, window.location.href);
+    } catch (err) {
+      return;
+    }
+
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+    if (url.origin !== window.location.origin) return;
+    // Ancla dentro de la misma página: deja el scroll suave nativo intacto.
+    if (url.pathname === window.location.pathname && url.hash) return;
+
+    e.preventDefault();
+    document.body.classList.add('is-leaving');
+    window.setTimeout(function () {
+      window.location.href = link.href;
+    }, EXIT_DELAY);
   });
 })();
 

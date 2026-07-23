@@ -122,9 +122,16 @@
      ------------------------------------------------------------- */
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-fast: 180ms;
-  --duration-base: 260ms;
-  --duration-slow: 420ms;
+  --duration-fast:   180ms;
+  --duration-base:   260ms;
+  --duration-slow:   420ms;
+  --duration-slower: 560ms; /* transiciones de página / secciones completas */
+
+  /* -------------------------------------------------------------
+     CURSOR — puntero personalizado, solo en desktop (hover fino)
+     ------------------------------------------------------------- */
+  --cursor-default: auto;
+  --cursor-pointer: pointer;
 
   /* -------------------------------------------------------------
      Z-INDEX — capas de la interfaz
@@ -150,4 +157,17 @@
   --color-text: var(--color-text-on-dark);
   --color-text-muted: var(--color-grey-300);
   --color-border: rgba(255, 255, 255, 0.14);
+}
+
+/* Cursor de pizza — únicamente en punteros finos con hover real (desktop).
+   Se ignora en touch/mobile, donde no hay cursor que mostrar. */
+@media (hover: hover) and (pointer: fine) {
+  :root {
+    --cursor-default: url('/assets/images/cursor/pizza-cursor.svg') 5 5,
+                       url('/assets/images/cursor/pizza-cursor.png') 5 5,
+                       auto;
+    --cursor-pointer:  url('/assets/images/cursor/pizza-cursor.svg') 5 5,
+                       url('/assets/images/cursor/pizza-cursor.png') 5 5,
+                       pointer;
+  }
 }

@@ -8,6 +8,7 @@ return [
         'contact'     => 'Contact',
         'language'    => 'Langue',
         'toggle_menu' => 'Ouvrir le menu',
+        'close_menu'  => 'Fermer le menu',
     ],
 
     'common' => [

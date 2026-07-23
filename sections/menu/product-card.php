@@ -5,7 +5,7 @@ $desc = $lang === 'fr' ? $p['description_fr'] : $p['description_en'];
 $catName = $lang === 'fr' ? $cat['name_fr'] : $cat['name_en'];
 ?>
 <article class="menu-card"
-         data-reveal
+         data-reveal="fade"
          role="button"
          tabindex="0"
          data-order-trigger

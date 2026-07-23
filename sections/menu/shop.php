@@ -3,7 +3,7 @@
 ?>
 <?php if ($nonEmptyCategories): ?>
 
-<section class="menu-shop u-section u-section--tight" data-reveal="fade">
+<section class="menu-shop u-section u-section--tight">
   <div class="u-container menu-shop__layout">
 
     <aside class="menu-filters" aria-label="<?= htmlspecialchars(t($t, 'menu.filters_title')) ?>">
