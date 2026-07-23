@@ -1,0 +1,313 @@
+/* =====================================================================
+   Pizzeria Roma — Home
+   ===================================================================== */
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  color: var(--color-white);
+  background: var(--gradient-fire);
+  padding-block: clamp(1.5rem, 4vw, 3rem) var(--space-2xl);
+}
+ 
+.home-hero__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.home-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.35) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* Degradado de fuego sutil, exclusivo del lenguaje "horno/llama" */
+.home-hero::before {
+  content: '';
+  position: absolute;
+  inset: -25% -10% auto -10%;
+  height: 65%;
+  z-index: 2;
+  background: var(--gradient-fire);
+  opacity: 0.16;
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.home-hero__grid {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .home-hero__grid {
+    grid-template-columns: 1fr 1.6fr;
+  }
+}
+
+.home-hero__content {
+  max-width: 46rem;
+}
+
+.home-hero__visual {
+  display: flex;
+  justify-content: center;
+  align-self: end;
+  margin-bottom: calc(var(--space-2xl) * -1);
+}
+
+@media (min-width: 768px) {
+  .home-hero__visual {
+    justify-content: flex-end;
+  }
+}
+
+.home-hero__photo {
+  display: block;
+  width: 100%;
+  max-width: 44rem;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
+}
+
+.home-hero__title {
+  margin-top: var(--space-sm);
+  color: var(--color-white);
+}
+
+.home-hero__subtitle {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-md);
+  color: var(--color-grey-300);
+  max-width: 42ch;
+}
+
+.home-hero__actions {
+  margin-top: var(--space-lg);
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* ---------- Value prop ---------- */
+.value-prop__inner {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .value-prop__inner { grid-template-columns: 1fr 1fr; }
+}
+
+.value-prop__media {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.value-prop__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.value-prop__inner .u-divider-accent { margin: var(--space-sm) 0; }
+
+.value-prop__body {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-md);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Menu preview ---------- */
+.menu-preview__head {
+  max-width: 40rem;
+  margin-inline: auto;
+  margin-bottom: var(--space-lg);
+}
+
+.menu-preview__cta {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* ---------- Delivery ---------- */
+.delivery__inner {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .delivery__inner { grid-template-columns: 1fr 1fr; }
+}
+
+.delivery__logos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.delivery__logo-link {
+  opacity: 0.85;
+  transition: opacity var(--duration-base) var(--ease-standard),
+              transform var(--duration-base) var(--ease-standard);
+}
+
+.delivery__logo-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.delivery__media {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.delivery__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Events ---------- */
+.events__inner {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .events__inner { grid-template-columns: 1fr 1fr; }
+}
+
+.events__media {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.events__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.events__body {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-md);
+  color: var(--color-text-muted);
+}
+
+.events__content .btn { margin-top: var(--space-lg); }
+
+/* ---------- Reviews ---------- */
+.reviews__grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.reviews__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3xs);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-alt);
+  min-width: 180px;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.reviews__card:hover { transform: translateY(-3px); }
+
+.reviews__score {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--color-gold-dark);
+}
+
+.reviews__count {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+/* ---------- FAQ ---------- */
+.home-faq__inner {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .home-faq__inner { grid-template-columns: 1fr 1fr; }
+}
+
+.home-faq__head {
+  margin-bottom: var(--space-lg);
+}
+
+.home-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.home-faq__media {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.home-faq__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-faq__item {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.home-faq__question {
+  cursor: pointer;
+  font-weight: var(--fw-semibold);
+}
+
+.home-faq__question::marker {
+  color: var(--color-mint);
+}
+
+.home-faq__answer {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+}

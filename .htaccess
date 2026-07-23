@@ -1,0 +1,49 @@
+RewriteEngine On
+RewriteBase /
+
+# Forzar HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Forzar dominio sin www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# Bloquear acceso directo a directorios internos
+RewriteRule ^(config|sql|lang|handlers)(/|$) - [F,L]
+RewriteRule ^admin/includes(/|$) - [F,L]
+
+# SEO: sitemap dinámico
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# Rutas públicas localizadas (EN/FR)
+RewriteRule ^(en|fr)/?$          pages/home.php?lang=$1    [L,QSA]
+RewriteRule ^(en|fr)/menu/?$     pages/menu.php?lang=$1    [L,QSA]
+RewriteRule ^(en|fr)/about/?$    pages/about.php?lang=$1   [L,QSA]
+RewriteRule ^(en|fr)/contact/?$  pages/contact.php?lang=$1 [L,QSA]
+
+# Admin (sin i18n)
+RewriteRule ^admin/?$            admin/index.php           [L,QSA]
+
+ErrorDocument 404 /pages/error-404.php
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(self), camera=(), microphone=()"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+Options -Indexes

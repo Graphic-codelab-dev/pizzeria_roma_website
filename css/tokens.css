@@ -1,0 +1,153 @@
+/* =====================================================================
+   Pizzeria Roma — Design Tokens
+   Todas las variables de diseño del sitio viven aquí. No se define
+   ningún valor de color, tipografía, espaciado, etc. fuera de este
+   archivo — el resto del CSS solo consume estos tokens.
+   ===================================================================== */
+
+:root {
+
+  /* -------------------------------------------------------------
+     COLOR — jerarquía cromática de marca
+     1) Rojo + Negro dominan y estructuran el sitio.
+     2) Blanco + espacio negativo dan la sensación premium.
+     3) Verde: acento puntual únicamente (hovers, badges, líneas).
+     4) Amarillo/Naranja: exclusivo del lenguaje "fuego / horno".
+     ------------------------------------------------------------- */
+
+  /* Rojo Roma — dominante */
+  --color-red:            #C1272D;
+  --color-red-intense:    #D42B1E;
+  --color-red-dark:       #8F1D22; /* hover/active sobre rojo */
+
+  /* Negro — anclaje */
+  --color-black:          #1A1A1A;
+  --color-black-pure:     #000000;
+
+  /* Verde menta — acento puntual, NUNCA bloques grandes */
+  --color-mint:           #3DBE7B;
+  --color-mint-bright:    #4CC98A;
+
+  /* Fuego / horno — exclusivo de iconografía de llama y calor */
+  --color-gold:           #E8C547;
+  --color-gold-dark:      #D4A937;
+  --color-fire-orange:    #F7931E;
+  --color-fire-burnt:     #E84E1B;
+
+  /* Neutros — espacio en blanco y respiración */
+  --color-white:          #FFFFFF;
+  --color-cream:          #FAF7F2; /* fondo cálido alternativo al blanco puro */
+  --color-grey-100:       #F4F2EF;
+  --color-grey-300:       #DAD5CD;
+  --color-grey-500:       #8A8580;
+  --color-grey-700:       #4A463F;
+ 
+  /* Gradientes de marca */
+  --gradient-red:         linear-gradient(135deg, var(--color-red) 0%, var(--color-red-intense) 100%);
+  --gradient-fire:        linear-gradient(135deg, var(--color-gold) 0%, var(--color-fire-orange) 55%, var(--color-fire-burnt) 100%);
+  --gradient-dark:        linear-gradient(180deg, var(--color-black) 0%, var(--color-black-pure) 100%);
+
+  /* Roles semánticos (lo que el resto del CSS debe usar en la práctica) */
+  --color-bg:             var(--color-white);
+  --color-bg-alt:         var(--color-cream);
+  --color-bg-dark:        var(--color-black);
+  --color-text:           var(--color-black);
+  --color-text-muted:     var(--color-grey-700);
+  --color-text-on-dark:   var(--color-white);
+  --color-border:         var(--color-grey-300);
+  --color-accent:         var(--color-mint);
+  --color-cta:            var(--color-red);
+  --color-cta-hover:      var(--color-red-dark);
+  --color-focus-ring:     var(--color-mint-bright);
+
+  /* -------------------------------------------------------------
+     TIPOGRAFÍA
+     ------------------------------------------------------------- */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --fs-xs:    clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  --fs-sm:    clamp(0.875rem, 0.84rem + 0.18vw, 0.9375rem);
+  --fs-base:  clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --fs-md:    clamp(1.125rem, 1.06rem + 0.32vw, 1.3125rem);
+  --fs-lg:    clamp(1.375rem, 1.24rem + 0.65vw, 1.75rem);
+  --fs-xl:    clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem);
+  --fs-2xl:   clamp(2.25rem, 1.85rem + 2vw, 3.5rem);
+  --fs-3xl:   clamp(3rem, 2.3rem + 3.5vw, 5.25rem);
+
+  --lh-tight: 1.1;
+  --lh-snug:  1.3;
+  --lh-body:  1.65;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    900;
+
+  --tracking-tight: -0.02em;
+  --tracking-wide:  0.06em;
+
+  /* -------------------------------------------------------------
+     ESPACIADO — escala en rem, usada en todo el sitio
+     ------------------------------------------------------------- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs:  0.75rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.5rem;
+  --space-xl:  4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 9rem;
+
+  --container-max: 1240px;
+  --container-pad: clamp(1.25rem, 4vw, 3rem);
+
+  /* -------------------------------------------------------------
+     FORMA — radios, sombras, bordes
+     ------------------------------------------------------------- */
+  --radius-sm:  6px;
+  --radius-md:  14px;
+  --radius-lg:  28px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 2px 8px rgba(26, 26, 26, 0.06);
+  --shadow-md: 0 8px 24px rgba(26, 26, 26, 0.10);
+  --shadow-lg: 0 20px 48px rgba(26, 26, 26, 0.16);
+  --shadow-red-glow: 0 12px 32px rgba(193, 39, 45, 0.25);
+
+  /* -------------------------------------------------------------
+     MOVIMIENTO — micro-interacciones, 200-300ms, sin rebote
+     ------------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 180ms;
+  --duration-base: 260ms;
+  --duration-slow: 420ms;
+
+  /* -------------------------------------------------------------
+     Z-INDEX — capas de la interfaz
+     ------------------------------------------------------------- */
+  --z-base:        1;
+  --z-promo-banner: 60;
+  --z-header:      100;
+  --z-lang-switch: 110;
+  --z-mobile-nav:  200;
+  --z-modal:       500;
+  --z-toast:       800;
+
+  /* -------------------------------------------------------------
+     BREAKPOINTS (documentales — usar los valores literales en
+     @media, las custom properties no son válidas ahí)
+     sm: 480px · md: 768px · lg: 1024px · xl: 1280px
+     ------------------------------------------------------------- */
+}
+
+/* Tema oscuro puntual para secciones sobre fondo negro (ej. hero, footer) */
+.on-dark {
+  --color-bg:   var(--color-bg-dark);
+  --color-text: var(--color-text-on-dark);
+  --color-text-muted: var(--color-grey-300);
+  --color-border: rgba(255, 255, 255, 0.14);
+}

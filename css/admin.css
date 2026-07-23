@@ -1,0 +1,322 @@
+/* =====================================================================
+   Pizzeria Roma — Admin
+   Interfaz simple y directa: botones grandes, labels claros,
+   sin tecnicismos. Funcional en móvil (el dueño edita desde el teléfono).
+   ===================================================================== */
+
+.admin-body {
+  background: var(--color-grey-100);
+  min-height: 100vh;
+}
+
+.admin-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ---------- Topbar / nav ---------- */
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.admin-topbar__brand {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+}
+
+.admin-topbar__brand span { color: var(--color-gold); }
+
+.admin-topbar__toggle {
+  color: var(--color-white);
+  font-size: var(--fs-lg);
+  padding: var(--space-2xs) var(--space-xs);
+}
+
+.admin-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--color-black);
+}
+
+.admin-nav.is-open { display: flex; }
+
+.admin-nav__link {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-grey-300);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: var(--fw-medium);
+}
+
+.admin-nav__link:hover,
+.admin-nav__link--active { color: var(--color-white); background: rgba(255, 255, 255, 0.06); }
+
+.admin-nav__link--logout { color: var(--color-fire-orange); }
+
+@media (min-width: 900px) {
+  .admin-topbar__toggle { display: none; }
+
+  .admin-nav {
+    display: flex;
+    flex-direction: row;
+    padding-inline: var(--space-md);
+  }
+
+  .admin-nav__link {
+    border-top: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .admin-nav__link--active,
+  .admin-nav__link:hover {
+    background: transparent;
+    border-bottom-color: var(--color-mint);
+  }
+}
+
+.admin-main {
+  flex: 1;
+  padding: var(--space-lg) var(--container-pad);
+  max-width: 1100px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.admin-main h1 { margin-bottom: var(--space-2xs); }
+
+/* ---------- Flash messages ---------- */
+.admin-flash {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  margin-block: var(--space-md);
+  font-size: var(--fs-sm);
+}
+
+.admin-flash--success { background: rgba(61, 190, 123, 0.15); color: #1f7a4d; }
+.admin-flash--error   { background: rgba(193, 39, 45, 0.1); color: var(--color-red-dark); }
+.admin-flash ul { padding-left: var(--space-md); }
+
+/* ---------- Stats ---------- */
+.admin-stats {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+  margin-block: var(--space-lg);
+}
+
+@media (min-width: 640px) {
+  .admin-stats { grid-template-columns: repeat(3, 1fr); }
+}
+
+.admin-stat-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+}
+
+.admin-stat-card__value {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+}
+
+.admin-stat-card__label {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.admin-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* ---------- Page head / filters ---------- */
+.admin-page-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.admin-filter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  margin-bottom: var(--space-md);
+  font-size: var(--fs-sm);
+}
+
+.admin-filter select {
+  padding: var(--space-2xs) var(--space-xs);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+}
+
+/* ---------- Table ---------- */
+.admin-table-wrap {
+  overflow-x: auto;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 640px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: var(--space-sm);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--fs-sm);
+}
+
+.admin-table th {
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wide);
+}
+
+.admin-table__thumb {
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.admin-table__actions {
+  display: flex;
+  gap: var(--space-2xs);
+  flex-wrap: wrap;
+}
+
+.admin-inline-form { display: inline-flex; }
+
+.admin-btn-danger { color: var(--color-red); border-color: var(--color-red); }
+.admin-btn-danger:hover { background: var(--color-red); color: var(--color-white); }
+
+/* ---------- Badges ---------- */
+.admin-badge {
+  display: inline-block;
+  padding: 2px var(--space-2xs);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+}
+
+.admin-badge--active { background: rgba(61, 190, 123, 0.15); color: #1f7a4d; }
+.admin-badge--inactive { background: var(--color-grey-100); color: var(--color-text-muted); }
+
+/* ---------- Forms ---------- */
+.admin-form {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  max-width: 44rem;
+}
+
+.admin-form__row {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+  margin-bottom: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .admin-form__row { grid-template-columns: 1fr 1fr; }
+}
+
+.admin-form__row--checkboxes {
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.admin-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  margin-bottom: var(--space-md);
+}
+
+.admin-form__row .admin-form__field { margin-bottom: 0; }
+
+.admin-form__field label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.admin-form__field input,
+.admin-form__field select,
+.admin-form__field textarea {
+  padding: var(--space-xs) var(--space-sm);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-base);
+}
+
+.admin-form__field input:focus,
+.admin-form__field select:focus,
+.admin-form__field textarea:focus {
+  border-color: var(--color-red);
+}
+
+.admin-form__current-image {
+  margin-top: var(--space-2xs);
+  border-radius: var(--radius-sm);
+}
+
+.admin-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-size: var(--fs-sm);
+}
+
+.admin-form__actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+/* ---------- Login / setup ---------- */
+.admin-login-body {
+  background: var(--gradient-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--container-pad);
+}
+
+.admin-login { width: 100%; max-width: 26rem; }
+
+.admin-login__form {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.admin-login__title {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-md);
+}
+
+.admin-login__title span { color: var(--color-red); }
+
+.admin-login__submit { width: 100%; margin-top: var(--space-sm); }

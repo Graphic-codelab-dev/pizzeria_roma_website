@@ -1,0 +1,97 @@
+/* =====================================================================
+   Pizzeria Roma — Utilities
+   Clases de ayuda reutilizables en todo el sitio. Nombradas con
+   prefijo `u-` para distinguirlas de bloques BEM.
+   ===================================================================== */
+
+.u-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.u-section {
+  padding-block: var(--space-2xl);
+}
+
+.u-section--tight {
+  padding-block: var(--space-xl);
+}
+
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.u-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.u-eyebrow--on-dark {
+  color: var(--color-gold);
+}
+
+.u-text-center { text-align: center; }
+
+.u-text-muted { color: var(--color-text-muted); }
+
+/* Separador puntual — único lugar recomendado para bloques de verde */
+.u-divider-accent {
+  display: block;
+  width: 56px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--color-mint);
+}
+
+.u-badge-fire {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius-full);
+  background: var(--gradient-fire);
+  color: var(--color-black);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-xs);
+}
+
+/* Grid responsivo genérico para cards de menú / preview */
+.u-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .u-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .u-grid--3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .u-grid--4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+.u-visible-mobile { display: block; }
+.u-visible-desktop { display: none; }
+
+@media (min-width: 768px) {
+  .u-visible-mobile { display: none; }
+  .u-visible-desktop { display: block; }
+}

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /config/
+Disallow: /sql/
+Disallow: /handlers/
+Disallow: /lang/
+Disallow: /uploads/
+
+Sitemap: https://pizzeriaroma.ca/sitemap.xml
+LLMs: https://pizzeriaroma.ca/llms.txt
