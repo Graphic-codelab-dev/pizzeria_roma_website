@@ -52,5 +52,15 @@ function restaurant_schema(string $siteUrl): array
             'bestRating'  => '5',
         ],
         'hasMenu' => $siteUrl . '/en/menu',
+        // Vincula el mismo negocio entre plataformas — ayuda a Google y a
+        // motores generativos (ChatGPT, Perplexity...) a consolidar la
+        // entidad "Pizzeria Roma" en una sola ficha con las mismas señales
+        // (reseñas, horarios, fotos) que ya se usan en el resto del sitio.
+        'sameAs' => [
+            'https://www.facebook.com/www.pizzeriaroma.ca/?locale=es_LA',
+            'https://www.instagram.com/pizzeriaroma1894/?hl=es',
+            'https://www.tripadvisor.ca/Restaurant_Review-g155016-d23126910-Reviews-Pizzeria_Roma-Sudbury_Northeastern_Ontario_Ontario.html',
+        ],
+        'hasMap' => 'https://www.google.com/maps?q=1507+Paris+St,+Greater+Sudbury,+ON+P3E+3B7',
     ];
 }

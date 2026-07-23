@@ -9,6 +9,14 @@
   });
 })();
 
+(function initAutosubmit() {
+  document.querySelectorAll('[data-autosubmit]').forEach(function (field) {
+    field.addEventListener('change', function () {
+      field.form.submit();
+    });
+  });
+})();
+
 (function initConfirmForms() {
   document.querySelectorAll('[data-confirm]').forEach(function (form) {
     form.addEventListener('submit', function (e) {

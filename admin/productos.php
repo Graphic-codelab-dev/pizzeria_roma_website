@@ -38,7 +38,7 @@ include __DIR__ . '/includes/layout-header.php';
 
 <form method="get" class="admin-filter">
   <label for="category">Filter by category</label>
-  <select id="category" name="category" onchange="this.form.submit()">
+  <select id="category" name="category" data-autosubmit>
     <option value="0">All categories</option>
     <?php foreach ($categories as $cat): ?>
     <option value="<?= (int) $cat['id'] ?>" <?= $categoryFilter === (int) $cat['id'] ? 'selected' : '' ?>>

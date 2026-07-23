@@ -4,16 +4,6 @@
    Micro-interacciones discretas: sin rebote, 200-300ms, cubic-bezier.
    ===================================================================== */
 
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.85; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
 /* Estado inicial de los elementos observados por IntersectionObserver */
 [data-reveal] {
   opacity: 0;
@@ -42,5 +32,13 @@
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .mobile-nav,
+  .mobile-nav__list,
+  .order-modal,
+  .order-modal__panel,
+  .site-header__toggle-bar {
+    transition: none !important;
   }
 }

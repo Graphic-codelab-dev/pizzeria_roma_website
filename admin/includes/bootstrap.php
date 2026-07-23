@@ -12,7 +12,10 @@ if (!defined('ROOT_PATH')) {
 }
 
 require_once ROOT_PATH . '/config/env.php';
+require_once ROOT_PATH . '/config/security-headers.php';
 load_env(ROOT_PATH . '/.env');
+
+$isHttps = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_name(env('ADMIN_SESSION_NAME', 'pr_admin_session'));
@@ -21,7 +24,9 @@ if (session_status() === PHP_SESSION_NONE) {
         'path'     => '/admin',
         'httponly' => true,
         'samesite' => 'Strict',
-        'secure'   => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+        'secure'   => $isHttps,
     ]);
     session_start();
 }
+
+$cspNonce = send_security_headers($isHttps, true);

@@ -6,7 +6,7 @@
  */
 ?>
 <section class="cta-call on-dark" data-reveal>
-  <div class="cta-call__media" style="background-image: url('/assets/images/home/pizza-banner.webp');" aria-hidden="true"></div>
+  <div class="cta-call__media cta-call__media--banner" aria-hidden="true"></div>
   <div class="cta-call__scrim" aria-hidden="true"></div>
   <div class="u-container cta-call__inner">
     <span class="u-eyebrow u-eyebrow--on-dark"><?= htmlspecialchars(t($t, 'cta_call.eyebrow')) ?></span>

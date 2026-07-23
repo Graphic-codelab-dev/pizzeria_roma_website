@@ -72,6 +72,9 @@ $schemaGraph = array_merge($schemaGraph, $seo['schema']);
 <meta property="og:description" content="<?= htmlspecialchars($seo['description']) ?>">
 <meta property="og:url" content="<?= htmlspecialchars($canonical) ?>">
 <meta property="og:image" content="<?= htmlspecialchars($siteUrl . $seo['og_image']) ?>">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pizzeria Roma — wood-fired pizza">
 <meta property="og:locale" content="<?= $lang === 'fr' ? 'fr_CA' : 'en_CA' ?>">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<?= htmlspecialchars($seo['title']) ?>">
@@ -89,8 +92,8 @@ $schemaGraph = array_merge($schemaGraph, $seo['schema']);
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
 
 <!-- CSS crítico (tokens + reset) inline para evitar un round-trip render-blocking -->
-<style><?= file_get_contents(ROOT_PATH . '/css/tokens.css') ?></style>
-<style><?= file_get_contents(ROOT_PATH . '/css/base.css') ?></style>
+<style nonce="<?= htmlspecialchars($cspNonce) ?>"><?= file_get_contents(ROOT_PATH . '/css/tokens.css') ?></style>
+<style nonce="<?= htmlspecialchars($cspNonce) ?>"><?= file_get_contents(ROOT_PATH . '/css/base.css') ?></style>
 
 <?php foreach (['utilities.css', 'animations.css', 'components.css'] as $_css): ?>
 <link rel="stylesheet" href="/css/<?= $_css ?>?v=<?= filemtime(ROOT_PATH . '/css/' . $_css) ?>">

@@ -28,7 +28,7 @@ include $root . '/components/head.php';
 <main id="main" class="u-container u-section u-text-center">
   <h1><?= htmlspecialchars(t($t, 'error404.heading')) ?></h1>
   <p class="u-text-muted"><?= htmlspecialchars(t($t, 'error404.body')) ?></p>
-  <p style="margin-top: var(--space-md);">
+  <p class="u-mt-md">
     <a class="btn btn--primary" href="<?= lang_url($lang) ?>"><?= htmlspecialchars(t($t, 'common.home')) ?></a>
   </p>
 </main>

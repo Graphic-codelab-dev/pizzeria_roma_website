@@ -51,6 +51,8 @@
 
 .u-text-muted { color: var(--color-text-muted); }
 
+.u-mt-md { margin-top: var(--space-md); }
+
 /* Separador puntual — único lugar recomendado para bloques de verde */
 .u-divider-accent {
   display: block;

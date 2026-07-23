@@ -39,7 +39,7 @@
   </div>
 </section>
 
-<script>
+<script nonce="<?= htmlspecialchars($cspNonce) ?>">
   window.PR_I18N = {
     sending: <?= json_encode(t($t, 'contact.form_sending')) ?>,
     success: <?= json_encode(t($t, 'contact.form_success')) ?>,
