@@ -14,11 +14,34 @@ try {
         'SELECT * FROM products WHERE is_active = 1 ORDER BY display_order ASC'
     )->fetchAll();
 
+    // product_id => ['ubereats' => ['price'=>.., 'is_placeholder'=>..], ...]
+    $platformPricesByProduct = [];
+    $platformRows = $pdo->query('SELECT * FROM product_platform_prices')->fetchAll();
+    foreach ($platformRows as $row) {
+        $platformPricesByProduct[(int) $row['product_id']][$row['platform']] = [
+            'price'         => (float) $row['price'],
+            'is_placeholder' => (bool) $row['is_placeholder'],
+        ];
+    }
+
     foreach ($categories as &$cat) {
         $cat['products'] = array_values(array_filter(
             $allProducts,
             static fn (array $p): bool => (int) $p['category_id'] === (int) $cat['id']
         ));
+    }
+    unset($cat);
+
+    require ROOT_PATH . '/sections/menu/merge-pizza-sizes.php';
+    $categories = menu_merge_pizza_sizes($categories, $platformPricesByProduct, $lang);
+
+    foreach ($categories as &$cat) {
+        foreach ($cat['products'] as &$p) {
+            if (!isset($p['order_payload'])) {
+                $p['order_payload'] = menu_build_single_size_payload($p, $lang, $platformPricesByProduct);
+            }
+        }
+        unset($p);
     }
     unset($cat);
 } catch (Throwable $e) {

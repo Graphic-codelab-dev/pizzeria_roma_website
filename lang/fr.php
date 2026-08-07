@@ -129,10 +129,16 @@ return [
         'sort_price_high'     => 'Prix : décroissant',
         'results_found'       => '{count} plat(s) trouvé(s)',
         'no_results'          => 'Aucun plat ne correspond à votre recherche.',
+        'price_from'          => 'À partir de',
         'order_title'         => 'Comment souhaitez-vous commander ?',
         'order_call'          => 'Appelez pour commander : 705-222-7662',
-        'order_or'            => 'ou commandez la livraison via :',
+        'order_or'            => 'ou commandez via :',
         'order_close'         => 'Fermer',
+        'order_size_label'    => 'Taille',
+        'order_pickup'        => 'À emporter',
+        'order_pickup_hint'   => 'toujours le meilleur prix',
+        'order_estimate_tag'  => 'est.',
+        'order_pickup_only'   => 'Ce format est disponible à emporter seulement.',
     ],
 
     'about' => [

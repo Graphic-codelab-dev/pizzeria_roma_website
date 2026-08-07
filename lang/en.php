@@ -129,10 +129,16 @@ return [
         'sort_price_high'     => 'Price: high to low',
         'results_found'       => '{count} dish(es) found',
         'no_results'          => 'No dishes match your search.',
+        'price_from'          => 'From',
         'order_title'         => 'How would you like to order?',
         'order_call'          => 'Call to order: 705-222-7662',
-        'order_or'            => 'or order delivery through:',
+        'order_or'            => 'or order through:',
         'order_close'         => 'Close',
+        'order_size_label'    => 'Size',
+        'order_pickup'        => 'Pickup',
+        'order_pickup_hint'   => 'always the best price',
+        'order_estimate_tag'  => 'est.',
+        'order_pickup_only'   => 'This size is available for pickup only.',
     ],
 
     'about' => [

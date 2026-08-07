@@ -7,6 +7,15 @@ try {
         'SELECT * FROM products WHERE is_active = 1 AND is_featured = 1 ORDER BY display_order ASC LIMIT 4'
     );
     $featuredProducts = $stmt->fetchAll();
+
+    // Las pizzas guardan el tamaño en el nombre ('12" Foo' / 'Foo 12 po'); en esta
+    // vista de una sola tarjeta por producto no aplica, así que se quita.
+    require_once ROOT_PATH . '/sections/menu/merge-pizza-sizes.php';
+    foreach ($featuredProducts as &$fp) {
+        $fp['name_en'] = menu_strip_size_prefix($fp['name_en']);
+        $fp['name_fr'] = menu_strip_size_prefix($fp['name_fr']);
+    }
+    unset($fp);
 } catch (Throwable $e) {
     $featuredProducts = [];
 }
