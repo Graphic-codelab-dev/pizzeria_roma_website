@@ -38,7 +38,7 @@ $currentPath = $seo['path'] ?? '';
     </nav>
 
     <div class="site-header__actions">
-      <a href="tel:+17052227662" class="site-header__phone u-visible-desktop"><?= htmlspecialchars(t($t, 'common.call_us')) ?>: 705-222-7662</a>
+      <a href="tel:+17052227662" class="site-header__phone u-visible-desktop"><?= htmlspecialchars(t($t, 'common.call_us')) ?>: 705-222-ROMA</a>
 
       <div class="lang-switch" role="group" aria-label="<?= htmlspecialchars(t($t, 'nav.language')) ?>">
         <a href="<?= lang_url('en', $currentPath) ?>"
@@ -69,7 +69,7 @@ $currentPath = $seo['path'] ?? '';
         </a>
       </li>
       <?php endforeach; ?>
-      <li><a href="tel:+17052227662" class="mobile-nav__link mobile-nav__link--phone">705-222-7662</a></li>
+      <li><a href="tel:+17052227662" class="mobile-nav__link mobile-nav__link--phone">705-222-ROMA</a></li>
     </ul>
   </nav>
 </header>

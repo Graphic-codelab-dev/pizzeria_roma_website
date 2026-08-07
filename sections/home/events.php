@@ -12,6 +12,7 @@
       <span class="u-divider-accent" aria-hidden="true"></span>
       <p class="events__body"><?= htmlspecialchars(t($t, 'home.events_body')) ?></p>
       <a href="<?= lang_url($lang, 'contact') ?>" class="btn btn--primary"><?= htmlspecialchars(t($t, 'home.events_cta')) ?></a>
+      <a href="tel:+17055617166" class="events__phone"><?= htmlspecialchars(t($t, 'home.events_call')) ?>: 705-561-7166</a>
     </div>
   </div>
 </section>

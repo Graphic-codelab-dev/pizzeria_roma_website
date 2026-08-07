@@ -13,7 +13,7 @@
     <h2 class="cta-call__title"><?= htmlspecialchars(t($t, 'cta_call.title')) ?></h2>
     <p class="cta-call__subtitle"><?= htmlspecialchars(t($t, 'cta_call.subtitle')) ?></p>
     <a href="tel:+17052227662" class="btn btn--primary cta-call__btn">
-      <?= htmlspecialchars(t($t, 'cta_call.button')) ?>: 705-222-7662
+      <?= htmlspecialchars(t($t, 'cta_call.button')) ?>: 705-222-ROMA
     </a>
   </div>
 </section>

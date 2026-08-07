@@ -52,7 +52,7 @@ $socialLinks = [
     <div class="site-footer__col">
       <h2 class="site-footer__heading"><?= htmlspecialchars(t($t, 'footer.contact_title')) ?></h2>
       <address class="site-footer__address">
-        <a href="tel:+17052227662">705-222-7662</a>
+        <a href="tel:+17052227662">705-222-ROMA</a>
         <p><?= htmlspecialchars(t($t, 'footer.address')) ?></p>
       </address>
     </div>

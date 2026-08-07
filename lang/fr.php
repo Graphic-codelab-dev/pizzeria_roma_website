@@ -75,6 +75,7 @@ return [
         'events_title'        => 'On apporte le four à bois chez vous',
         'events_body'         => 'Anniversaires, mariages, événements corporatifs — Pizzeria Roma s\'occupe de tout grâce à notre four à bois portatif, en cuisant des pizzas fraîches sur place, partout à Sudbury.',
         'events_cta'          => 'Réserver votre événement',
+        'events_call'         => 'Ou appelez notre ligne traiteur',
 
         'reviews_eyebrow'     => 'Ce qu\'on dit de nous',
         'reviews_title'       => 'Noté par nos clients',
@@ -96,7 +97,7 @@ return [
             ],
             [
                 'q' => 'Où se trouve Pizzeria Roma?',
-                'a' => 'Pizzeria Roma est situé à Sudbury, Ontario. Appelez le 705-222-7662 ou consultez la page Contact pour l\'itinéraire.',
+                'a' => 'Pizzeria Roma est situé à Sudbury, Ontario. Appelez le 705-222-ROMA ou consultez la page Contact pour l\'itinéraire.',
             ],
             [
                 'q' => 'Pizzeria Roma offre-t-elle des options végétariennes?',
@@ -115,7 +116,7 @@ return [
     'menu' => [
         'hero_title'          => 'Notre menu',
         'hero_subtitle'       => 'Pizzas au four à bois, pâtes maison, et tout ce qu\'il faut entre les deux.',
-        'empty_state'         => 'Notre menu est en cours de mise à jour. Appelez-nous au 705-222-7662 pour les options du jour.',
+        'empty_state'         => 'Notre menu est en cours de mise à jour. Appelez-nous au 705-222-ROMA pour les options du jour.',
         'featured_badge'      => 'Coup de cœur',
         'filters_title'       => 'Filtres de recherche',
         'search_label'        => 'Recherche',
@@ -131,7 +132,7 @@ return [
         'no_results'          => 'Aucun plat ne correspond à votre recherche.',
         'price_from'          => 'À partir de',
         'order_title'         => 'Comment souhaitez-vous commander ?',
-        'order_call'          => 'Appelez pour commander : 705-222-7662',
+        'order_call'          => 'Appelez pour commander : 705-222-ROMA',
         'order_or'            => 'ou commandez via :',
         'order_close'         => 'Fermer',
         'order_size_label'    => 'Taille',
@@ -179,7 +180,7 @@ return [
         'form_submit'   => 'Envoyer le message',
         'form_sending'  => 'Envoi en cours…',
         'form_success'  => 'Merci — votre message a été envoyé. Nous vous répondrons bientôt.',
-        'form_error'    => 'Une erreur est survenue. Veuillez réessayer ou nous appeler au 705-222-7662.',
+        'form_error'    => 'Une erreur est survenue. Veuillez réessayer ou nous appeler au 705-222-ROMA.',
     ],
 
     'error404' => [

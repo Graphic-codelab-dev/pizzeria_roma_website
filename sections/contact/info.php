@@ -10,7 +10,7 @@
     </div>
     <div class="contact-info__card">
       <h2><?= htmlspecialchars(t($t, 'contact.info_title')) ?></h2>
-      <a class="contact-info__phone" href="tel:+17052227662">705-222-7662</a>
+      <a class="contact-info__phone" href="tel:+17052227662">705-222-ROMA</a>
       <p class="contact-info__address">
         <strong><?= htmlspecialchars(t($t, 'contact.address_title')) ?>:</strong>
         <?= htmlspecialchars(t($t, 'footer.address')) ?>

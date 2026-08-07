@@ -224,6 +224,17 @@
 
 .events__content .btn { margin-top: var(--space-lg); }
 
+.events__phone {
+  display: block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  color: var(--color-red);
+  transition: color var(--duration-base) var(--ease-standard);
+}
+
+.events__phone:hover { color: var(--color-red-dark); }
+
 /* ---------- Reviews ---------- */
 .reviews__grid {
   display: flex;

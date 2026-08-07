@@ -75,6 +75,7 @@ return [
         'events_title'        => 'We bring the wood fire to you',
         'events_body'         => 'Birthdays, weddings, corporate events — Pizzeria Roma caters them all with our portable wood-fired oven, cooking fresh, live pizza right at your venue anywhere in Sudbury.',
         'events_cta'          => 'Book your event',
+        'events_call'         => 'Or call our catering line',
 
         'reviews_eyebrow'     => 'What people are saying',
         'reviews_title'       => 'Rated by our guests',
@@ -96,7 +97,7 @@ return [
             ],
             [
                 'q' => 'Where is Pizzeria Roma located?',
-                'a' => 'Pizzeria Roma is located in Sudbury, Ontario. Call 705-222-7662 or check the Contact page for directions.',
+                'a' => 'Pizzeria Roma is located in Sudbury, Ontario. Call 705-222-ROMA or check the Contact page for directions.',
             ],
             [
                 'q' => 'Does Pizzeria Roma offer vegetarian options?',
@@ -115,7 +116,7 @@ return [
     'menu' => [
         'hero_title'          => 'Our Menu',
         'hero_subtitle'       => 'Wood-fired pizzas, house-made pasta, and everything in between.',
-        'empty_state'         => 'Our menu is being updated. Please call us at 705-222-7662 for today\'s offerings.',
+        'empty_state'         => 'Our menu is being updated. Please call us at 705-222-ROMA for today\'s offerings.',
         'featured_badge'      => 'Fan favorite',
         'filters_title'       => 'Search filters',
         'search_label'        => 'Search',
@@ -131,7 +132,7 @@ return [
         'no_results'          => 'No dishes match your search.',
         'price_from'          => 'From',
         'order_title'         => 'How would you like to order?',
-        'order_call'          => 'Call to order: 705-222-7662',
+        'order_call'          => 'Call to order: 705-222-ROMA',
         'order_or'            => 'or order through:',
         'order_close'         => 'Close',
         'order_size_label'    => 'Size',
@@ -179,7 +180,7 @@ return [
         'form_submit'   => 'Send message',
         'form_sending'  => 'Sending…',
         'form_success'  => 'Thanks — your message has been sent. We\'ll get back to you soon.',
-        'form_error'    => 'Something went wrong. Please try again or call us at 705-222-7662.',
+        'form_error'    => 'Something went wrong. Please try again or call us at 705-222-ROMA.',
     ],
 
     'error404' => [
