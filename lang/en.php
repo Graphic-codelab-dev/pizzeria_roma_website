@@ -101,7 +101,7 @@ return [
             ],
             [
                 'q' => 'Does Pizzeria Roma offer vegetarian or vegan options?',
-                'a' => 'Yes — the menu includes vegetarian and vegan pizzas such as the Margherita and Quattro Formaggi, plus pasta, salads and appetizers that can be made meat-free.',
+                'a' => 'Yes — the menu features two dedicated wood-fired pizzas, The Vegetarian Pizza and The Vegan Pizza, plus vegetarian-friendly salads, soups and sides. Most other pizzas can also be made without meat on request.',
             ],
         ],
     ],
