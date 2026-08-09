@@ -58,6 +58,18 @@
 
 .btn--outline-light:hover { border-color: var(--color-white); }
 
+.btn--outline-primary {
+  background: transparent;
+  color: var(--color-red);
+  border: 1.5px solid var(--color-red);
+}
+
+.btn--outline-primary:hover {
+  background: var(--gradient-red);
+  color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+}
+
 /* ---------- Promo banner ---------- */
 .promo-banner {
   position: relative;

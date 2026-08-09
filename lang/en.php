@@ -75,7 +75,7 @@ return [
         'events_title'        => 'We bring the wood fire to you',
         'events_body'         => 'Birthdays, weddings, corporate events — Pizzeria Roma caters them all with our portable wood-fired oven, cooking fresh, live pizza right at your venue anywhere in Sudbury.',
         'events_cta'          => 'Book your event',
-        'events_call'         => 'Or call our catering line',
+        'events_call'         => 'Call us',
 
         'reviews_eyebrow'     => 'What people are saying',
         'reviews_title'       => 'Rated by our guests',
@@ -171,6 +171,7 @@ return [
         'hours_title'   => 'Hours',
         'info_title'    => 'Get in touch',
         'address_title' => 'Address',
+        'catering_title' => 'Catering, events & festivals',
         'map_title'     => 'Find us',
         'form_title'    => 'Send us a message',
         'form_name'     => 'Name',

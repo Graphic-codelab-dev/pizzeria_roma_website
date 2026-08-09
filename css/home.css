@@ -222,18 +222,13 @@
   color: var(--color-text-muted);
 }
 
-.events__content .btn { margin-top: var(--space-lg); }
-
-.events__phone {
-  display: block;
-  margin-top: var(--space-sm);
-  font-family: var(--font-display);
-  font-size: var(--fs-md);
-  color: var(--color-red);
-  transition: color var(--duration-base) var(--ease-standard);
+.events__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
 }
-
-.events__phone:hover { color: var(--color-red-dark); }
 
 /* ---------- Reviews ---------- */
 .reviews__grid {

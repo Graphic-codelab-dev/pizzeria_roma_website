@@ -75,7 +75,7 @@ return [
         'events_title'        => 'On apporte le four à bois chez vous',
         'events_body'         => 'Anniversaires, mariages, événements corporatifs — Pizzeria Roma s\'occupe de tout grâce à notre four à bois portatif, en cuisant des pizzas fraîches sur place, partout à Sudbury.',
         'events_cta'          => 'Réserver votre événement',
-        'events_call'         => 'Ou appelez notre ligne traiteur',
+        'events_call'         => 'Appelez-nous',
 
         'reviews_eyebrow'     => 'Ce qu\'on dit de nous',
         'reviews_title'       => 'Noté par nos clients',
@@ -171,6 +171,7 @@ return [
         'hours_title'   => 'Heures d\'ouverture',
         'info_title'    => 'Nous joindre',
         'address_title' => 'Adresse',
+        'catering_title' => 'Traiteur, événements et festivals',
         'map_title'     => 'Nous trouver',
         'form_title'    => 'Envoyez-nous un message',
         'form_name'     => 'Nom',

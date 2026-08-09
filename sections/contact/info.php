@@ -15,6 +15,10 @@
         <strong><?= htmlspecialchars(t($t, 'contact.address_title')) ?>:</strong>
         <?= htmlspecialchars(t($t, 'footer.address')) ?>
       </p>
+      <p class="contact-info__catering">
+        <strong><?= htmlspecialchars(t($t, 'contact.catering_title')) ?>:</strong>
+        <a href="tel:+17055617166">705-561-7166</a>
+      </p>
     </div>
   </div>
 </section>

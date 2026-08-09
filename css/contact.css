@@ -52,6 +52,18 @@
 
 .contact-info__address { color: var(--color-text-muted); }
 
+.contact-info__catering {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+}
+
+.contact-info__catering a {
+  color: var(--color-red);
+  transition: color var(--duration-base) var(--ease-standard);
+}
+
+.contact-info__catering a:hover { color: var(--color-red-dark); }
+
 .contact-form-section__inner {
   max-width: 40rem;
   margin-inline: auto;
