@@ -58,19 +58,30 @@ function menu_build_single_size_payload(array $p, string $lang, array $platformP
     ];
 }
 
-/** Fusiona pizzas-12 / pizzas-15 / pizzas-16 en tarjetas únicas dentro de pizzas-12. */
-function menu_merge_pizza_sizes(array $categories, array $platformPricesByProduct, string $lang): array
-{
+/**
+ * Fusiona una categoría "primaria" con una o más categorías de tamaño/porción
+ * en tarjetas únicas (mismo patrón usado por pizzas: pizzas-12/15/16, y
+ * reutilizado para Panzerotti y Ensaladas por porción/familiar).
+ *
+ * @param array<string,string> $sizeSlugs Mapa etiqueta => slug, en orden de
+ *   aparición en el selector (sin incluir la etiqueta primaria).
+ */
+function menu_merge_sized_products(
+    array $categories,
+    array $platformPricesByProduct,
+    string $lang,
+    string $primarySlug,
+    string $primaryLabel,
+    array $sizeSlugs
+): array {
     $bySlug = [];
     foreach ($categories as $idx => $cat) {
         $bySlug[$cat['slug']] = $idx;
     }
 
-    if (!isset($bySlug['pizzas-12'])) {
+    if (!isset($bySlug[$primarySlug])) {
         return $categories;
     }
-
-    $sizeSlugs = ['15"' => 'pizzas-15', '16"' => 'pizzas-16'];
 
     $bySize = [];
     foreach ($sizeSlugs as $label => $slug) {
@@ -82,14 +93,15 @@ function menu_merge_pizza_sizes(array $categories, array $platformPricesByProduc
         }
     }
 
-    $primaryIdx      = $bySlug['pizzas-12'];
+    $primaryIdx      = $bySlug[$primarySlug];
     $mergedProducts  = [];
+    $labelOrder      = array_merge([$primaryLabel], array_keys($sizeSlugs));
 
     foreach ($categories[$primaryIdx]['products'] as $primary) {
         $baseNameEn = menu_strip_size_prefix($primary['name_en']);
         $baseNameFr = menu_strip_size_prefix($primary['name_fr']);
 
-        $sizes = ['12"' => $primary];
+        $sizes = [$primaryLabel => $primary];
         foreach ($bySize as $label => $productsByName) {
             if (isset($productsByName[$baseNameEn])) {
                 $sizes[$label] = $productsByName[$baseNameEn];
@@ -99,7 +111,7 @@ function menu_merge_pizza_sizes(array $categories, array $platformPricesByProduc
         $sizePayload = [];
         $isFeatured  = false;
         $minPrice    = null;
-        foreach (['12"', '15"', '16"'] as $label) {
+        foreach ($labelOrder as $label) {
             if (!isset($sizes[$label])) {
                 continue;
             }
@@ -139,4 +151,17 @@ function menu_merge_pizza_sizes(array $categories, array $platformPricesByProduc
     }
 
     return array_values($categories);
+}
+
+/** Fusiona pizzas-12 / pizzas-15 / pizzas-16 en tarjetas únicas dentro de pizzas-12. */
+function menu_merge_pizza_sizes(array $categories, array $platformPricesByProduct, string $lang): array
+{
+    return menu_merge_sized_products(
+        $categories,
+        $platformPricesByProduct,
+        $lang,
+        'pizzas-12',
+        '12"',
+        ['15"' => 'pizzas-15', '16"' => 'pizzas-16']
+    );
 }

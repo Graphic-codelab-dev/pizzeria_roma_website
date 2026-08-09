@@ -34,6 +34,22 @@ try {
 
     require ROOT_PATH . '/sections/menu/merge-pizza-sizes.php';
     $categories = menu_merge_pizza_sizes($categories, $platformPricesByProduct, $lang);
+    $categories = menu_merge_sized_products(
+        $categories,
+        $platformPricesByProduct,
+        $lang,
+        'panzerotti',
+        '10"',
+        ['15"' => 'panzerotti-15']
+    );
+    $categories = menu_merge_sized_products(
+        $categories,
+        $platformPricesByProduct,
+        $lang,
+        'salads',
+        $lang === 'fr' ? 'Par personne' : 'Per person',
+        [($lang === 'fr' ? 'Format familial (4)' : 'Family (4)') => 'salads-family']
+    );
 
     foreach ($categories as &$cat) {
         foreach ($cat['products'] as &$p) {

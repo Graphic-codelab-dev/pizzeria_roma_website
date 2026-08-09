@@ -100,8 +100,8 @@ return [
                 'a' => 'Pizzeria Roma is located in Sudbury, Ontario. Call 705-222-ROMA or check the Contact page for directions.',
             ],
             [
-                'q' => 'Does Pizzeria Roma offer vegetarian options?',
-                'a' => 'Yes — the menu includes vegetarian pizzas such as the Margherita and Quattro Formaggi, plus pasta, salads and appetizers that can be made meat-free.',
+                'q' => 'Does Pizzeria Roma offer vegetarian or vegan options?',
+                'a' => 'Yes — the menu includes vegetarian and vegan pizzas such as the Margherita and Quattro Formaggi, plus pasta, salads and appetizers that can be made meat-free.',
             ],
         ],
     ],
