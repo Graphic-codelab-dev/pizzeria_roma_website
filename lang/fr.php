@@ -70,6 +70,7 @@ return [
         'menu_preview_cta'     => 'Voir le menu complet',
 
         'delivery_title'      => 'Commander en livraison',
+        'delivery_body'       => 'Envie d\'une pizza cuite au four à bois sans quitter le divan? Commandez la livraison sur votre plateforme préférée et recevez-la fraîche, directement chez vous.',
 
         'events_eyebrow'      => 'Traiteur et événements privés',
         'events_title'        => 'On apporte le four à bois chez vous',

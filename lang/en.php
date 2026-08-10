@@ -70,6 +70,7 @@ return [
         'menu_preview_cta'     => 'See the full menu',
 
         'delivery_title'      => 'Order for delivery',
+        'delivery_body'       => 'Craving wood-fired pizza without leaving the couch? Order delivery through your favorite platform and get it fresh at your door.',
 
         'events_eyebrow'      => 'Catering & private events',
         'events_title'        => 'We bring the wood fire to you',

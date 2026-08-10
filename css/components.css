@@ -82,14 +82,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2xs);
-  padding-block: var(--space-2xs);
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
+  gap: var(--space-xs);
+  padding-block: var(--space-xs);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
   text-align: center;
 }
 
-.promo-banner__icon { font-size: 1.1em; }
+.promo-banner__icon { font-size: 1.3em; }
 
 /* ---------- Header / navegación ---------- */
 /* El wrapper (no el header solo) es el elemento sticky, para que el

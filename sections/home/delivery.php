@@ -5,6 +5,7 @@ $deliveryPlatforms = require ROOT_PATH . '/config/delivery-platforms.php';
   <div class="u-container delivery__inner">
     <div class="delivery__content">
       <h2><?= htmlspecialchars(t($t, 'home.delivery_title')) ?></h2>
+      <p class="delivery__body"><?= htmlspecialchars(t($t, 'home.delivery_body')) ?></p>
       <div class="delivery__logos">
         <?php foreach ($deliveryPlatforms as $d): ?>
         <a href="<?= htmlspecialchars($d['url']) ?>" class="delivery__logo-link" target="_blank" rel="noopener noreferrer" aria-label="<?= htmlspecialchars($d['name']) ?>">
