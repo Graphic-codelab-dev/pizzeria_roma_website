@@ -15,11 +15,7 @@ $teamMembers = [
         'role'  => t($t, 'about.team_role_co_owner'),
         'photo' => '/assets/images/about/rob_dad.webp',
     ],
-    [
-        'name'  => 'Helper',
-        'role'  => t($t, 'about.team_role_kitchen'),
-        'photo' => '/assets/images/about/rob_helper.webp',
-    ],
+    
     // ['name' => 'Nombre Apellido', 'role' => 'Cargo', 'photo' => '/assets/images/about/foto.webp'],
 ];
 ?>

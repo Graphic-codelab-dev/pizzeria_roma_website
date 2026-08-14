@@ -160,10 +160,9 @@ return [
 
         'team_eyebrow'     => 'L\'équipe derrière tout ça',
         'team_title'       => 'Notre équipe',
-        'team_body'        => '[PLACEHOLDER — photo et présentation du propriétaire/de l\'équipe à fournir par le client.]',
+        'team_body'        => 'Le propriétaire, Robert Ferruci, apporte une pizza italienne authentique dans le sud de Sudbury, ancrée dans la tradition familiale. Son père, immigrant italien, lui a transmis l\'amour de la vraie cuisine italienne — et Robert s\'est lui-même rendu en Italie pour maîtriser cet art, en apprenant les techniques traditionnelles directement à la source. Deux générations, une seule passion : la vraie pizza italienne, faite dans les règles de l\'art.',
         'team_role_owner'      => 'Propriétaire',
-        'team_role_co_owner'   => 'Copropriétaire',
-        'team_role_kitchen'    => 'Personnel de cuisine',
+        'team_role_co_owner'   => 'Père',
     ],
 
     'contact' => [
