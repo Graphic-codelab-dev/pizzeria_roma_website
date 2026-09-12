@@ -1,0 +1,12 @@
+{
+  "name": "pizzeria-roma",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Build script para generar dist/ listo para subir a producción",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}
