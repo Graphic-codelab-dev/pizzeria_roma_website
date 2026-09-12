@@ -128,11 +128,11 @@ include __DIR__ . '/includes/layout-header.php';
   <div class="admin-form__row">
     <div class="admin-form__field">
       <label for="description_en">Description (English)</label>
-      <textarea id="description_en" name="description_en" rows="3"><?= htmlspecialchars($product['description_en']) ?></textarea>
+      <textarea id="description_en" name="description_en" rows="3"><?= htmlspecialchars((string) $product['description_en']) ?></textarea>
     </div>
     <div class="admin-form__field">
       <label for="description_fr">Description (French)</label>
-      <textarea id="description_fr" name="description_fr" rows="3"><?= htmlspecialchars($product['description_fr']) ?></textarea>
+      <textarea id="description_fr" name="description_fr" rows="3"><?= htmlspecialchars((string) $product['description_fr']) ?></textarea>
     </div>
   </div>
 
