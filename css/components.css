@@ -662,6 +662,26 @@ body.nav-open { overflow: hidden; }
 
 .order-modal__row--pickup .order-modal__row-icon { color: var(--color-mint); }
 
+/* Plataforma destacada (DI orders): pedido directo, con el azul de su logo. */
+.order-modal__row--featured .order-modal__row-link {
+  background: rgba(5, 29, 63, 0.06);
+  border: 1.5px solid #051d3f;
+  box-shadow: 0 2px 8px rgba(5, 29, 63, 0.12);
+}
+
+.order-modal__row--featured .order-modal__row-link:hover,
+.order-modal__row--featured .order-modal__row-link:focus-visible {
+  background: rgba(5, 29, 63, 0.12);
+}
+
+.order-modal__row--featured .order-modal__row-icon {
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+}
+
+.order-modal__row--featured .order-modal__row-hint { color: #051d3f; }
+.order-modal__row--featured .order-modal__row-price { color: #051d3f; }
+
 .order-modal__row-icon img {
   width: 100%;
   height: 100%;

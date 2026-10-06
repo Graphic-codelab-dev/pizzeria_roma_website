@@ -10,6 +10,7 @@
 <div class="order-modal" id="orderModal" hidden
      data-i18n-pickup="<?= htmlspecialchars(t($t, 'menu.order_pickup')) ?>"
      data-i18n-pickup-hint="<?= htmlspecialchars(t($t, 'menu.order_pickup_hint')) ?>"
+     data-i18n-featured-hint="<?= htmlspecialchars(t($t, 'menu.order_featured_hint')) ?>"
      data-i18n-estimate="<?= htmlspecialchars(t($t, 'menu.order_estimate_tag')) ?>"
      data-i18n-pickup-only="<?= htmlspecialchars(t($t, 'menu.order_pickup_only')) ?>">
   <div class="order-modal__backdrop" data-order-close></div>

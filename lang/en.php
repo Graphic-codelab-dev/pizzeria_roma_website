@@ -140,6 +140,7 @@ return [
         'order_pickup'        => 'Pickup',
         'order_pickup_hint'   => 'always the best price',
         'order_estimate_tag'  => 'est.',
+        'order_featured_hint' => 'order online direct',
         'order_pickup_only'   => 'This size is available for pickup only.',
     ],
 

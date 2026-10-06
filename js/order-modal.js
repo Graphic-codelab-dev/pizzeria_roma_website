@@ -13,6 +13,7 @@
   var i18n = {
     pickup:      modal.dataset.i18nPickup || 'Pickup',
     pickupHint:  modal.dataset.i18nPickupHint || '',
+    featuredHint: modal.dataset.i18nFeaturedHint || '',
     estimate:    modal.dataset.i18nEstimate || 'est.',
     pickupOnly:  modal.dataset.i18nPickupOnly || ''
   };
@@ -60,7 +61,7 @@
   }
 
   function buildPlatformRow(platform) {
-    var li = el('li', 'order-modal__row');
+    var li = el('li', platform.featured ? 'order-modal__row order-modal__row--featured' : 'order-modal__row');
     var link = document.createElement('a');
     link.className = 'order-modal__row-link';
     link.href = platform.url;
@@ -77,7 +78,14 @@
     icon.appendChild(img);
     link.appendChild(icon);
 
-    link.appendChild(el('span', 'order-modal__row-name', platform.name));
+    if (platform.featured) {
+      var text = el('span', 'order-modal__row-text');
+      text.appendChild(el('span', 'order-modal__row-name', platform.name));
+      if (i18n.featuredHint) text.appendChild(el('span', 'order-modal__row-hint', i18n.featuredHint));
+      link.appendChild(text);
+    } else {
+      link.appendChild(el('span', 'order-modal__row-name', platform.name));
+    }
     link.appendChild(el('span', 'order-modal__row-leader'));
     link.appendChild(buildPriceValue(platform.price, platform.isEstimate));
 
@@ -91,7 +99,11 @@
 
     pricelist.appendChild(buildPickupRow(sizeData));
 
-    (sizeData.platforms || []).forEach(function (platform) {
+    // Las plataformas destacadas van primero, justo después de pickup.
+    var platforms = (sizeData.platforms || []).slice().sort(function (a, b) {
+      return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
+    });
+    platforms.forEach(function (platform) {
       pricelist.appendChild(buildPlatformRow(platform));
     });
 

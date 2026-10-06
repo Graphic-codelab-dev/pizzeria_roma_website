@@ -38,6 +38,7 @@ function menu_platform_list_for_product(int $productId, array $platformPricesByP
             'url'        => $platform['url'],
             'price'      => number_format($prices[$platform['key']]['price'], 2, '.', ''),
             'isEstimate' => $prices[$platform['key']]['is_placeholder'],
+            'featured'   => !empty($platform['featured']),
         ];
     }
     return $list;

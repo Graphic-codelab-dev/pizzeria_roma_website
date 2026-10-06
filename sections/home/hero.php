@@ -13,7 +13,7 @@
       <p class="home-hero__subtitle"><?= htmlspecialchars(t($t, 'home.hero_subtitle')) ?></p>
       <div class="home-hero__actions">
         <a href="<?= lang_url($lang, 'menu') ?>" class="btn btn--primary"><?= htmlspecialchars(t($t, 'home.hero_cta_menu')) ?></a>
-        <a href="#delivery" class="btn btn--outline-light"><?= htmlspecialchars(t($t, 'home.hero_cta_order')) ?></a>
+        <a href="https://pizzeria-roma1894.com/" class="btn btn--outline-light" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars(t($t, 'home.hero_cta_order')) ?></a>
       </div>
     </div>
     <div class="home-hero__visual">

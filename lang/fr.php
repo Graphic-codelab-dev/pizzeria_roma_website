@@ -140,6 +140,7 @@ return [
         'order_pickup'        => 'À emporter',
         'order_pickup_hint'   => 'toujours le meilleur prix',
         'order_estimate_tag'  => 'est.',
+        'order_featured_hint' => 'commandez en ligne directement',
         'order_pickup_only'   => 'Ce format est disponible à emporter seulement.',
     ],
 
