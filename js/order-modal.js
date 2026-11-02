@@ -93,6 +93,30 @@
     return li;
   }
 
+  // Plataformas de terceros: solo logo + nombre, sin precio, en cuadrícula.
+  function buildPlatformTile(platform) {
+    var li = el('li', 'order-modal__tile');
+    var link = document.createElement('a');
+    link.className = 'order-modal__tile-link';
+    link.href = platform.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+
+    var icon = el('span', 'order-modal__tile-icon');
+    var img = document.createElement('img');
+    img.src = platform.logo;
+    img.alt = '';
+    img.loading = 'lazy';
+    img.width = 20;
+    img.height = 20;
+    icon.appendChild(img);
+    link.appendChild(icon);
+    link.appendChild(el('span', 'order-modal__tile-name', platform.name));
+
+    li.appendChild(link);
+    return li;
+  }
+
   function renderPricelist(sizeData) {
     pricelist.innerHTML = '';
     if (!sizeData) return;
@@ -100,12 +124,21 @@
     pricelist.appendChild(buildPickupRow(sizeData));
 
     // Las plataformas destacadas van primero, justo después de pickup.
-    var platforms = (sizeData.platforms || []).slice().sort(function (a, b) {
-      return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
-    });
-    platforms.forEach(function (platform) {
+    var platforms = sizeData.platforms || [];
+    platforms.filter(function (p) { return p.featured; }).forEach(function (platform) {
       pricelist.appendChild(buildPlatformRow(platform));
     });
+
+    var others = platforms.filter(function (p) { return !p.featured; });
+    if (others.length) {
+      var gridItem = el('li', 'order-modal__row order-modal__tiles-wrap');
+      var grid = el('ul', 'order-modal__tiles');
+      others.forEach(function (platform) {
+        grid.appendChild(buildPlatformTile(platform));
+      });
+      gridItem.appendChild(grid);
+      pricelist.appendChild(gridItem);
+    }
 
     if ((!sizeData.platforms || sizeData.platforms.length === 0) && i18n.pickupOnly) {
       var note = el('li', 'order-modal__pickup-note', i18n.pickupOnly);
